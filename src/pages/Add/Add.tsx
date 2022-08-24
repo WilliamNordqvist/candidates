@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const H1 = styled.h1`
-  color: ${({ theme }) => theme.main};
+  color: ${({ theme }) => theme.primary}; 
 `;
 
 export const Add: React.FC = () => {

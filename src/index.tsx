@@ -6,6 +6,7 @@ import { Add } from "./pages/Add/Add";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeContextProvider } from "./context/themeContext";
 import { CandidateContextProvider } from "./context/candidateContext";
+import { Background } from "./components/background";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,13 +14,15 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <CandidateContextProvider>
-      <ThemeContextProvider>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="add" element={<Add />} />
-        </Routes>
-      </ThemeContextProvider>
+      <CandidateContextProvider>
+        <ThemeContextProvider>
+          <Background>
+            <Routes>
+              <Route path="/" element={<App />} />
+              <Route path="add" element={<Add />} />
+            </Routes>
+          </Background>
+        </ThemeContextProvider>
       </CandidateContextProvider>
     </BrowserRouter>
   </React.StrictMode>
