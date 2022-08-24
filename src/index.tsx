@@ -4,6 +4,8 @@ import "./index.css";
 import { App } from "./pages/App/App";
 import { Add } from "./pages/Add/Add";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeContextProvider } from "./context/themeContext";
+import { CandidateContextProvider } from "./context/candidateContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -11,10 +13,14 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="add" element={<Add />} />
-      </Routes>
+    <CandidateContextProvider>
+      <ThemeContextProvider>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="add" element={<Add />} />
+        </Routes>
+      </ThemeContextProvider>
+      </CandidateContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
