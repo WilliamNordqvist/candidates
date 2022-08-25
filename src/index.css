@@ -11,4 +11,16 @@ html {
 
 * {
   box-sizing: border-box;
+  font-family: Raleway;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+svg {
+  cursor: pointer;
 }
