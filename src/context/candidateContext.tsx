@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext } from "react";
-import data from '../db.json'
+import data from "../db.json";
 
 export enum RecruiterStep {
   CONTACT = "kontakt",
@@ -15,7 +15,7 @@ type TCandidate = {
   email: string;
   address: string;
   step: RecruiterStep;
-  id:number;
+  id: number;
 };
 
 export const recruiterSteps: RecruiterStep[] = [
@@ -24,17 +24,16 @@ export const recruiterSteps: RecruiterStep[] = [
   RecruiterStep.INTERVIEW,
   RecruiterStep.OFFER,
   RecruiterStep.COMPLETED,
-] 
+];
 
 const CandidatesContext = createContext({
   candidates: undefined,
 }) as React.Context<{ candidates?: TCandidate[] }>;
 
-const mockedData = data as TCandidate[]
+const mockedData = data as TCandidate[];
 export const CandidateContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  
   return (
     <CandidatesContext.Provider
       value={{

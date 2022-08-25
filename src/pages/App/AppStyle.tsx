@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import ClearIcon from '@mui/icons-material/Clear';
 
-export const InputWrapper = styled.div`
+export const InputWrapper = styled.div<{isSearch:boolean}>`
 display:flex;
 padding-top:6%;
 margin:auto;
 width:90%;
 max-width:700px ;
-border-bottom: 2px solid ${({ theme }) => theme.primary};
+border-bottom: 2px solid ${({ theme, isSearch }) => isSearch ? theme.secondary : theme.primary};
 `
 
 export const Input = styled.input`
