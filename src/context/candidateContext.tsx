@@ -1,6 +1,7 @@
 import React, { createContext, ReactNode, useContext } from "react";
+import data from '../db.json'
 
-enum RecruiterStep {
+export enum RecruiterStep {
   CONTACT = "kontakt",
   DIALOGUE = "dialog",
   INTERVIEW = "intervju",
@@ -14,25 +15,30 @@ type TCandidate = {
   email: string;
   address: string;
   step: RecruiterStep;
+  id:number;
 };
+
+export const recruiterSteps: RecruiterStep[] = [
+  RecruiterStep.CONTACT,
+  RecruiterStep.DIALOGUE,
+  RecruiterStep.INTERVIEW,
+  RecruiterStep.OFFER,
+  RecruiterStep.COMPLETED,
+] 
 
 const CandidatesContext = createContext({
   candidates: undefined,
 }) as React.Context<{ candidates?: TCandidate[] }>;
 
+const mockedData = data as TCandidate[]
 export const CandidateContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
+  
   return (
     <CandidatesContext.Provider
       value={{
-        candidates: [{
-          name:'name',
-          age:32,
-          email:'email',
-          address:'address',
-          step:RecruiterStep.COMPLETED
-        }],
+        candidates: mockedData,
       }}
     >
       {children}

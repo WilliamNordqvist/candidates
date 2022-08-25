@@ -1,0 +1,50 @@
+[
+    {
+        "name":"Johan",
+        "age":20,
+        "email":"johan@gmail.com",
+        "address":"johansgata 7",
+        "step":"kontakt",
+        "id":1
+    },
+    {
+        "name":"Emelie",
+        "age":40,
+        "email":"emelie@gmail.com",
+        "address":"emeliesgata 140",
+        "step":"dialog",
+        "id":2
+    },
+    {
+        "name":"Tom",
+        "age":38,
+        "email":"tom@gmail.com",
+        "address":"tomsgata 1",
+        "step":"kontakt",
+        "id":3
+    },
+    {
+        "name":"Pia",
+        "age":29,
+        "email":"pia@gmail.com",
+        "address":"piasgata 15",
+        "step":"erbjudande",
+        "id":4
+    },
+    {
+        "name":"Ola",
+        "age":33,
+        "email":"ola@gmail.com",
+        "address":"olasgata 15",
+        "step":"avslutad",
+        "id":5
+    },
+    {
+        "name":"Ida",
+        "age":31,
+        "email":"ida@gmail.com",
+        "address":"idasgata 15",
+        "step":"intervju",
+        "id":6
+    }
+]
