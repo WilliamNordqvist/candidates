@@ -6,7 +6,7 @@ import { Add } from "./pages/Add/Add";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeContextProvider } from "./context/themeContext";
 import { CandidateContextProvider } from "./context/candidateContext";
-import { Background } from "./components/background";
+import { Background } from "./components/background/background";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
