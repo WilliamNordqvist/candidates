@@ -3,8 +3,8 @@ import ClearIcon from '@mui/icons-material/Clear';
 
 export const InputWrapper = styled.div<{isSearch:boolean}>`
 display:flex;
-padding-top:6%;
-margin:auto;
+/* padding-top:6%; */
+margin:6% auto;
 width:90%;
 max-width:700px ;
 border-bottom: 2px solid ${({ theme, isSearch }) => isSearch ? theme.secondary : theme.primary};
@@ -43,4 +43,11 @@ border:none;
 background:transparent;
 color: ${({ theme }) => theme.primary};
 margin-left:5px;
+`
+export const FlexWrapper = styled.div`
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content:center ;
+
 `

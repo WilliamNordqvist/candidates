@@ -1,7 +1,7 @@
 import React, { createContext, ReactNode, useContext } from "react";
 import data from "../db.json";
 
-export enum RecruiterStep {
+export enum RecruiterStage {
   CONTACT = "kontakt",
   DIALOGUE = "dialog",
   INTERVIEW = "intervju",
@@ -9,21 +9,21 @@ export enum RecruiterStep {
   COMPLETED = "avslutad",
 }
 
-type TCandidate = {
+export type TCandidate = {
   name: string;
   age: number;
   email: string;
   address: string;
-  step: RecruiterStep;
+  stage: RecruiterStage;
   id: number;
 };
 
-export const recruiterSteps: RecruiterStep[] = [
-  RecruiterStep.CONTACT,
-  RecruiterStep.DIALOGUE,
-  RecruiterStep.INTERVIEW,
-  RecruiterStep.OFFER,
-  RecruiterStep.COMPLETED,
+export const recruiterStages: RecruiterStage[] = [
+  RecruiterStage.CONTACT,
+  RecruiterStage.DIALOGUE,
+  RecruiterStage.INTERVIEW,
+  RecruiterStage.OFFER,
+  RecruiterStage.COMPLETED,
 ];
 
 const CandidatesContext = createContext({

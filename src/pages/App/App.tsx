@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { recruiterSteps, useCandidates } from "../../context/candidateContext";
-import { Input, Select, ClearInput, InputWrapper } from "./AppStyle";
+import { Button } from "../../components/button/button";
+import { Card } from "../../components/card/card";
+import { recruiterStages, useCandidates } from "../../context/candidateContext";
+import {
+  Input,
+  Select,
+  ClearInput,
+  InputWrapper,
+  FlexWrapper,
+} from "./AppStyle";
 
 export const App: React.FC = () => {
   const candidates = useCandidates();
@@ -32,7 +40,7 @@ export const App: React.FC = () => {
           .toLocaleLowerCase()
           .includes(searchWord.toLocaleLowerCase())
       )
-      .filter((candidate) => candidate.step === selectedStage);
+      .filter((candidate) => candidate.stage === selectedStage);
     setSearchCandidates(searchResult);
     return;
   }, [candidates, searchWord, selectedStage]);
@@ -60,7 +68,7 @@ export const App: React.FC = () => {
           <option hidden selected>
             FILTER
           </option>
-          {recruiterSteps.map((step) => (
+          {recruiterStages.map((step) => (
             <option value={step}>{step}</option>
           ))}
         </Select>
@@ -69,11 +77,13 @@ export const App: React.FC = () => {
       {/* <Link to="/add">
         <h1>APP</h1>
       </Link> */}
-      <>
-        {searchCandidates.map((candidate) => {
-          return <p>{candidate.name}</p>;
-        })}
-      </>
+      <FlexWrapper>
+        {searchCandidates.map((candidate) => (
+          <Card {...candidate}></Card>
+        ))}
+      </FlexWrapper>
+
+      <Button buttontype="secondary" onClick={() => console.log('click')}>Add new</Button>
     </>
   );
 };
