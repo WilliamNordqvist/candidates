@@ -1,9 +1,16 @@
 import styled from "styled-components";
 import ClearIcon from '@mui/icons-material/Clear';
 
+export const PageWrapper = styled.div`
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+align-items: center ;
+`
+
 export const InputWrapper = styled.div<{isSearch:boolean}>`
 display:flex;
-/* padding-top:6%; */
 margin:6% auto;
 width:90%;
 max-width:700px ;

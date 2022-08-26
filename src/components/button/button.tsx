@@ -12,6 +12,7 @@ const StyledButton = styled(MUIButton)<{
   buttontype: "primary" | "secondary" | "delete";
 }>`
   && {
+    width:250px;
     ${({ buttontype, theme }) =>
       buttontype === "primary" &&
       css`

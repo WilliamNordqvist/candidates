@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Box } from "@mui/material";
 import { Button } from "../../components/button/button";
 import { Card } from "../../components/card/card";
 import { recruiterStages, useCandidates } from "../../context/candidateContext";
@@ -8,6 +10,7 @@ import {
   ClearInput,
   InputWrapper,
   FlexWrapper,
+  PageWrapper,
 } from "./AppStyle";
 
 export const App: React.FC = () => {
@@ -17,6 +20,7 @@ export const App: React.FC = () => {
     undefined
   );
   const [searchCandidates, setSearchCandidates] = useState(candidates);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (searchWord.length <= 0 && !selectedStage) {
@@ -50,40 +54,48 @@ export const App: React.FC = () => {
   }
   return (
     <>
-      <InputWrapper isSearch={searchWord.length > 0}>
-        <Input
-          id="search"
-          name="search"
-          placeholder="SEARCH"
-          value={searchWord}
-          onChange={(e) => setSearchWord(e.target.value)}
-        />
+      <PageWrapper>
+        <Box width="100%">
+          <InputWrapper isSearch={searchWord.length > 0}>
+            <Input
+              id="search"
+              name="search"
+              placeholder="SEARCH"
+              value={searchWord}
+              onChange={(e) => setSearchWord(e.target.value)}
+            />
 
-        <Select
-          onChange={(e) => setSelectedStage(e.target.value)}
-          value={selectedStage}
-          name="Stage"
-          id="Stage"
-        >
-          <option hidden selected>
-            FILTER
-          </option>
-          {recruiterStages.map((step) => (
-            <option value={step}>{step}</option>
-          ))}
-        </Select>
-        <ClearInput fontSize="small" onClick={() => setSelectedStage(" ")} />
-      </InputWrapper>
-      {/* <Link to="/add">
-        <h1>APP</h1>
-      </Link> */}
-      <FlexWrapper>
-        {searchCandidates.map((candidate) => (
-          <Card {...candidate}></Card>
-        ))}
-      </FlexWrapper>
-
-      <Button buttontype="secondary" onClick={() => console.log('click')}>Add new</Button>
+            <Select
+              onChange={(e) => setSelectedStage(e.target.value)}
+              value={selectedStage}
+              name="Stage"
+              id="Stage"
+            >
+              <option hidden selected>
+                FILTER
+              </option>
+              {recruiterStages.map((step) => (
+                <option value={step}>{step}</option>
+              ))}
+            </Select>
+            <ClearInput
+              fontSize="small"
+              onClick={() => setSelectedStage(" ")}
+            />
+          </InputWrapper>
+          <FlexWrapper>
+            {searchCandidates.map((candidate) => (
+              //<Link to={/id}/>
+              <Card {...candidate}></Card>
+            ))}
+          </FlexWrapper>
+        </Box>
+        <Box mt={10}>
+          <Button onClick={() => navigate("/add")} buttontype="secondary">
+            Add new
+          </Button>
+        </Box>
+      </PageWrapper>
     </>
   );
 };

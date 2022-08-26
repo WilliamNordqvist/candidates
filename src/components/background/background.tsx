@@ -11,6 +11,7 @@ const FullPage = styled(Box)`
 `;
 
 const CenterPage = styled.div`
+  height: 100%;
   margin: auto;
   max-width: 1200px;
 `;
