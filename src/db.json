@@ -1,50 +1,146 @@
 [
     {
-        "name":"Johan Jönsson",
-        "age":20,
-        "email":"johan@gmail.com",
-        "address":"johansgata 7",
-        "stage":"kontakt",
-        "id":1
+        "name": "Johan Jönsson",
+        "age": 20,
+        "email": "johan@gmail.com",
+        "address": "johansgata 7",
+        "stage": "kontakt",
+        "notes": [
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis lectus nulla at volutpat diam ut. Porttitor eget dolor morbi non arcu risus quis varius.",
+                "date": 1661613390158,
+                "stage": "kontakt"
+            }
+        ],
+        "id": 1
     },
     {
-        "name":"Emelie Karlsson",
-        "age":40,
-        "email":"emelie@gmail.com",
-        "address":"emeliesgata 140",
-        "stage":"dialog",
-        "id":2
+        "name": "Emelie Karlsson",
+        "age": 40,
+        "email": "emelie@gmail.com",
+        "address": "emeliesgata 140",
+        "stage": "dialog",
+        "notes": [
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis lectus nulla at volutpat diam ut. Porttitor eget dolor morbi non arcu risus quis varius.",
+                "date": 1661613390158,
+                "stage": "kontakt"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "dialog"
+            }
+        ],
+        "id": 2
     },
     {
-        "name":"Tom Svensson",
-        "age":38,
-        "email":"tom@gmail.com",
-        "address":"tomsgata 1",
-        "stage":"kontakt",
-        "id":3
+        "name": "Tom Svensson",
+        "age": 38,
+        "email": "tom@gmail.com",
+        "address": "tomsgata 1",
+        "stage": "kontakt",
+        "notes": null,
+        "id": 3
     },
     {
-        "name":"Pia Hansson",
-        "age":29,
-        "email":"pia@gmail.com",
-        "address":"piasgata 15",
-        "stage":"erbjudande",
-        "id":4
+        "name": "Pia Hansson",
+        "age": 29,
+        "email": "pia@gmail.com",
+        "address": "piasgata 15",
+        "stage": "erbjudande",
+        "notes": [
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis lectus nulla at volutpat diam ut. Porttitor eget dolor morbi non arcu risus quis varius.",
+                "date": 1661613390158,
+                "stage": "kontakt"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "dialog"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "intervju"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "erbjudande"
+            }
+        ],
+        "id": 4
     },
     {
-        "name":"Ola Berg",
-        "age":33,
-        "email":"ola@gmail.com",
-        "address":"olasgata 15",
-        "stage":"avslutad",
-        "id":5
+        "name": "Ola Berg",
+        "age": 33,
+        "email": "ola@gmail.com",
+        "address": "olasgata 15",
+        "stage": "avslutad",
+        "notes": [
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis lectus nulla at volutpat diam ut. Porttitor eget dolor morbi non arcu risus quis varius.",
+                "date": 1661613390158,
+                "stage": "kontakt"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "dialog"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "intervju"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "erbjudande"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "avslutad"
+            }
+        ],
+        "id": 5
     },
     {
-        "name":"Ida Skog",
-        "age":31,
-        "email":"ida@gmail.com",
-        "address":"idasgata 15",
-        "stage":"intervju",
-        "id":6
+        "name": "Ida Skog",
+        "age": 31,
+        "email": "ida@gmail.com",
+        "address": "idasgata 15",
+        "stage": "intervju",
+        "notes": [
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis lectus nulla at volutpat diam ut. Porttitor eget dolor morbi non arcu risus quis varius.",
+                "date": 1661613390158,
+                "stage": "kontakt"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "dialog"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "intervju"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "erbjudande"
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut enim blandit volutpat maecenas. Tortor dignissim convallis aenean et.",
+                "date": 1661613390158,
+                "stage": "avslutad"
+            }
+        ],
+        "id": 6
     }
 ]

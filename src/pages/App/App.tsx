@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import { Button } from "../../components/button/button";
 import { Card } from "../../components/card/card";
@@ -52,7 +52,6 @@ export const App: React.FC = () => {
   if (!searchCandidates) {
     return <p>Loading</p>;
   }
-  console.log({candidates});
   return (
     <>
       <PageWrapper>
@@ -85,10 +84,13 @@ export const App: React.FC = () => {
             />
           </InputWrapper>
           <FlexWrapper>
-            {searchCandidates.map((candidate) => (
-              //<Link to={/id}/>
-              <Card key={candidate.id} {...candidate}></Card>
-            ))}
+            {searchCandidates
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((candidate) => (
+                <Link to={`/${candidate.id}`}>
+                  <Card key={candidate.id} {...candidate} />
+                </Link>
+              ))}
           </FlexWrapper>
         </Box>
         <Box mt={10}>

@@ -9,6 +9,7 @@ const StyledCard = styled(MUICard)`
   padding-bottom: 25px;
   cursor: pointer;
   margin:5px;
+  text-transform:capitalize ;
 `;
 
 const Circle = styled(Avatar)`

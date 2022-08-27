@@ -4,13 +4,13 @@ import styled, { css } from "styled-components";
 
 type TButton = {
   onClick: () => void;
-  buttontype?: "primary" | "secondary" | "delete";
+  buttontype?: "primary" | "secondary" | "icon";
   children: ReactNode;
   disabled?: boolean;
 };
 
 const StyledButton = styled(MUIButton)<{
-  buttontype: "primary" | "secondary" | "delete";
+  buttontype: "primary" | "secondary" | "icon";
 }>`
   && {
     width: 250px;
@@ -34,16 +34,24 @@ const StyledButton = styled(MUIButton)<{
           color: ${theme.background};
         }
       `}
-    /* ${({ buttontype, theme }) =>
-      buttontype === "delete" &&
+    ${({ buttontype, theme, disabled }) =>
+      buttontype === "icon" &&
       css`
-        background: ${theme.color.deleteButtonColor};
-        color: ${theme.color.deleteButtonTextColor};
+        width: auto;
+        box-shadow: none;
+        border: none;
+        background: transparent;
         &:hover {
-          background: ${theme.color.deleteButtonColor};
-          color: ${theme.color.deleteButtonTextColor};
+          background: transparent;
+          box-shadow: none;
         }
-      `} */
+        svg {
+          color: ${disabled ? theme.primaryLight : theme.primary};
+        }
+      `}
+      @media only screen and (max-width: 600px) {
+      width: 100px;
+    }
   }
 `;
 

@@ -19,12 +19,13 @@ const FlexWrapper = styled.div`
 `;
 
 export const Add: React.FC = () => {
-  const [candidate, setCandidate] = useState({
+  const [candidate, setCandidate] = useState<TCandidate>({
     name: "",
     age: "",
     email: "",
     address: "",
     stage: RecruiterStage.CONTACT,
+    notes: null,
     id: new Date().getTime(),
   });
   const navigate = useNavigate();
