@@ -18,10 +18,12 @@ const Circle = styled(Avatar)`
 `;
 
 export const Card: React.FC<TCandidate> = ({ name, stage }) => {
+  
   const [firstName, lastName] = name.split(" ")
+  const initials = firstName[0] || '' + lastName[0] || ''
   return (
     <StyledCard>
-      <CardHeader avatar={<Circle>{firstName[0]+lastName[0]}</Circle>} title={name} subheader={stage} />
+      <CardHeader avatar={<Circle>{initials}</Circle>} title={name} subheader={stage} />
       <Box textAlign={"center"} m="auto" mb={0} width="35%">
         <AvatarProfile />
       </Box>
