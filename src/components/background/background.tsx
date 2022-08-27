@@ -8,6 +8,7 @@ const FullPage = styled(Box)`
   width: 100vw;
   overflow: auto;
   padding: 20px;
+  position:relative;
 `;
 
 const CenterPage = styled.div`

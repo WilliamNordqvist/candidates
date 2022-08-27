@@ -1,4 +1,10 @@
-import React, { createContext, ReactNode, useContext } from "react";
+import React, {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import data from "../db.json";
 
 export enum RecruiterStage {
@@ -11,7 +17,7 @@ export enum RecruiterStage {
 
 export type TCandidate = {
   name: string;
-  age: number;
+  age: number | string;
   email: string;
   address: string;
   stage: RecruiterStage;
@@ -28,16 +34,35 @@ export const recruiterStages: RecruiterStage[] = [
 
 const CandidatesContext = createContext({
   candidates: undefined,
-}) as React.Context<{ candidates?: TCandidate[] }>;
+  addCandidate: () => undefined,
+}) as React.Context<{
+  candidates?: TCandidate[];
+  addCandidate: ((candidate: TCandidate) => void )| (() => void);
+}>;
 
 const mockedData = data as TCandidate[];
 export const CandidateContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
+  const [candidates, setCandidates] = useState<TCandidate[] | undefined>();
+
+  useEffect(() => {
+    setCandidates(mockedData);
+  }, []);
+
+  const addCandidate = (candidate:TCandidate) => {
+    setCandidates([
+      ...candidates || [],
+      candidate
+    ])
+  }
+
   return (
     <CandidatesContext.Provider
       value={{
-        candidates: mockedData,
+        candidates,
+        addCandidate
+  
       }}
     >
       {children}
@@ -46,6 +71,6 @@ export const CandidateContextProvider: React.FC<{ children: ReactNode }> = ({
 };
 
 export const useCandidates = () => {
-  const { candidates } = useContext(CandidatesContext);
-  return candidates;
+  const store = useContext(CandidatesContext);
+  return store;
 };

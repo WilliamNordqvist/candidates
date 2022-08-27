@@ -6,13 +6,14 @@ type TButton = {
   onClick: () => void;
   buttontype?: "primary" | "secondary" | "delete";
   children: ReactNode;
+  disabled?: boolean;
 };
 
 const StyledButton = styled(MUIButton)<{
   buttontype: "primary" | "secondary" | "delete";
 }>`
   && {
-    width:250px;
+    width: 250px;
     ${({ buttontype, theme }) =>
       buttontype === "primary" &&
       css`
@@ -50,6 +51,7 @@ export const Button: React.FC<TButton> = ({
   children,
   onClick,
   buttontype = "primary",
+  disabled = false,
 }) => {
   return (
     <StyledButton
@@ -57,6 +59,7 @@ export const Button: React.FC<TButton> = ({
       onClick={onClick}
       fullWidth
       variant="contained"
+      disabled={disabled}
     >
       {children}
     </StyledButton>

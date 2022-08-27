@@ -14,7 +14,7 @@ import {
 } from "./AppStyle";
 
 export const App: React.FC = () => {
-  const candidates = useCandidates();
+  const { candidates } = useCandidates();
   const [searchWord, setSearchWord] = useState("");
   const [selectedStage, setSelectedStage] = useState<string | undefined>(
     undefined
@@ -52,6 +52,7 @@ export const App: React.FC = () => {
   if (!searchCandidates) {
     return <p>Loading</p>;
   }
+  console.log({candidates});
   return (
     <>
       <PageWrapper>
@@ -60,7 +61,7 @@ export const App: React.FC = () => {
             <Input
               id="search"
               name="search"
-              placeholder="SEARCH"
+              placeholder="SÖK"
               value={searchWord}
               onChange={(e) => setSearchWord(e.target.value)}
             />
@@ -86,13 +87,13 @@ export const App: React.FC = () => {
           <FlexWrapper>
             {searchCandidates.map((candidate) => (
               //<Link to={/id}/>
-              <Card {...candidate}></Card>
+              <Card key={candidate.id} {...candidate}></Card>
             ))}
           </FlexWrapper>
         </Box>
         <Box mt={10}>
           <Button onClick={() => navigate("/add")} buttontype="secondary">
-            Add new
+            Lägg till
           </Button>
         </Box>
       </PageWrapper>

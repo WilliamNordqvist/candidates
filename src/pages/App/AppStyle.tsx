@@ -23,9 +23,7 @@ export const Input = styled.input`
   border: none;
   padding: 0;
   color: ${({ theme }) => theme.primary};
-  border-radius: 0px;
   font-size: 16px;
-
   ::placeholder {
     color: ${({ theme }) => theme.primary};
   }
