@@ -8,10 +8,10 @@ import {
   TCandidate,
   useCandidates,
 } from "../../context/candidateContext";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Box } from "@mui/material";
+import { ArrowBack } from "@mui/icons-material";
 
-const FlexWrapper = styled.div`
+export const FlexWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -45,15 +45,14 @@ export const Add: React.FC = () => {
 
   return (
     <Box height={"100%"}>
-      <ArrowBackIcon
-        onClick={() => navigate("/")}
-        sx={{
-          position: "absolute",
-          top: "10px",
-        }}
-      />
+      <Box position="absolute" top="10px" left="0">
+        <Button buttontype="icon" onClick={() => navigate("/")}>
+          <ArrowBack />
+        </Button>
+      </Box>
       <FlexWrapper>
         <CandidateForm
+          title="Lägg till"
           onSubmit={onSubmit}
           onInput={onInput}
           candidate={candidate}

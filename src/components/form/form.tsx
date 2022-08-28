@@ -6,11 +6,14 @@ export const CandidateForm: React.FC<{
   candidate: TCandidate;
   onInput: (key: string, value: string | number) => void;
   onSubmit: () => void;
-}> = ({ candidate, onInput, onSubmit }) => {
+  title:string;
+}> = ({ candidate, onInput, onSubmit, title }) => {
   return (
     <FormContainer>
+      <h1>{title}</h1>
       <Form onSubmit={onSubmit}>
         <Input
+          autoFocus={true}
           onChange={(e) => onInput("name", e.target.value)}
           value={candidate.name}
           placeholder="Namn"

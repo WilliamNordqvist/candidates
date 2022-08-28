@@ -8,6 +8,7 @@ import { ThemeContextProvider } from "./context/themeContext";
 import { CandidateContextProvider } from "./context/candidateContext";
 import { Background } from "./components/background/background";
 import { Candidate } from "./pages/Candidate/Candidate";
+import { Edit } from "./pages/Edit/Edit";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -22,6 +23,7 @@ root.render(
               <Route path="/" element={<App />} />
               <Route path="add" element={<Add />} />
               <Route path="/:id" element={<Candidate />} />
+              <Route path="/:id/edit" element={<Edit />} />
             </Routes>
           </Background>
         </ThemeContextProvider>

@@ -5,16 +5,19 @@ export const FormContainer = styled.div`
   max-width: 600px;
   height: 60%;
   background: ${({ theme }) => theme.secondary};
+  color: ${({ theme }) => theme.primary};
   border-radius: 10px;
   margin: auto;
   padding: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction:column;
   align-items: center;
 `;
 
 export const Form = styled.form`
   width: 100%;
+  justify-self: end;
+  margin: 8% 0;
 `;
 
 export const Input = styled.input`

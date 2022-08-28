@@ -19,3 +19,8 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+
+export const Title = styled.h1`
+  text-align: center;
+  color: ${({ theme }) => theme.primary};
+`;

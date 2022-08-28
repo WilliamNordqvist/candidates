@@ -7,13 +7,13 @@ import {
   TCandidate,
   useCandidates,
 } from "../../context/candidateContext";
-import { PageWrapper, Stepper } from "./CandidateStyles";
+import { PageWrapper, Stepper, Title } from "./CandidateStyles";
 import {
   ArrowBackIosNew as Back,
   ArrowForwardIos as Forward,
 } from "@mui/icons-material";
 import { Button } from "../../components/button/button";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { ArrowBack, Settings } from "@mui/icons-material";
 import { Notes } from "../../components/notes/notes";
 
 export const Candidate: React.FC = () => {
@@ -46,20 +46,30 @@ export const Candidate: React.FC = () => {
     });
   };
   const onSave = () => {
-    const { notes, stage } = candidate;
-    updateCandidate({
-      ...candidate,
-      notes: notes
-        ? [{ date: Date.now(), stage, text: newNote }, ...notes]
-        : [{ date: Date.now(), stage, text: newNote }],
-    });
-    setNewNote("");
+    if (newNote !== "") {
+      const { notes, stage } = candidate;
+      updateCandidate({
+        ...candidate,
+        notes: notes
+          ? [{ date: Date.now(), stage, text: newNote }, ...notes]
+          : [{ date: Date.now(), stage, text: newNote }],
+      });
+      setNewNote("");
+    } else {
+      updateCandidate(candidate);
+    }
   };
   return (
     <PageWrapper>
-      <Box position="absolute" top="10px">
+      <Box position="absolute" top="10px" left="0">
         <Button buttontype="icon" onClick={() => navigate("/")}>
-          <ArrowBackIcon />
+          <ArrowBack />
+        </Button>
+      </Box>
+
+      <Box position="absolute" top="10px" right="0">
+        <Button buttontype="icon" onClick={() => navigate("edit")}>
+          <Settings />
         </Button>
       </Box>
 
@@ -72,6 +82,8 @@ export const Candidate: React.FC = () => {
           ))}
         </Stepper>
       </Box>
+
+      <Title>{candidate.name}</Title>
 
       <Notes
         value={newNote}
@@ -91,7 +103,7 @@ export const Candidate: React.FC = () => {
           <Button onClick={onSave}> SPARA </Button>
           {isLastStage && (
             <>
-              <Box width="10px" />
+              <Box component="span" width="10px" />
               <Button
                 buttontype="secondary"
                 onClick={() => deleteCandidate(candidate)}
